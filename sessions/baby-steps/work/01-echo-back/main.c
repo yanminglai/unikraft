@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/types.h>
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <unistd.h>
@@ -18,7 +19,7 @@ int receive_and_send(int client_recvfd, int client_sendfd)
 	memset(buf, 0, BUFLEN);
 
 	// TODO:  recv() buffer into buf;
-	// bytes_received = ...
+	bytes_received = recv(client_recvfd, buf, BUFLEN, 0);
 
 	if (bytes_received < 0) {
 		fprintf(stderr, "bytes_received recv");
@@ -26,7 +27,7 @@ int receive_and_send(int client_recvfd, int client_sendfd)
 	}
 
 	// TODO: send() buf back;
-	// bytes_send = ...
+	bytes_send = send(client_sendfd, buf, BUFLEN, 0);
 
 	if (bytes_send < 0) {
 		fprintf(stderr, "bytes_send send");
@@ -43,7 +44,7 @@ int main(int argc, char* argv[])
 	struct sockaddr_in serv_addr;
 
 	// TODO: open socket fd;
-	// listen_fd = ...
+	listen_fd = socket(AF_INET, SOCK_STREAM, 0);
 
 	if (listen_fd < 0) {
 		fprintf(stderr, "socket");
@@ -61,7 +62,7 @@ int main(int argc, char* argv[])
 	serv_addr.sin_addr.s_addr = INADDR_ANY;
 
 	// TODO: bind() the socket;
-	// err = ...
+	err = bind(listen_fd, (struct sockaddr *)&serv_addr, sizeof(serv_addr));
 
 	if (err < 0) {
 		fprintf(stderr, "bind");
@@ -77,7 +78,7 @@ int main(int argc, char* argv[])
 	listen(listen_fd, 1);
 
 	// TODO: accept() new connection;
-	// conn_fd = ...
+	conn_fd = accept(listen_fd, (struct sockaddr*)&client_addr, &socket_len);
 
 	if (conn_fd < 0) {
 		fprintf(stderr, "conn_fd accept");
@@ -89,6 +90,8 @@ int main(int argc, char* argv[])
 	} while (bytes_received > 0);
 
 	// TODO: close file descriptors
+	close(conn_fd);
+	close(listen_fd);
 
 	return 0;
 }
