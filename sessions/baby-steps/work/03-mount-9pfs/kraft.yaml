@@ -5,3 +5,8 @@ unikraft:
 targets:
   - architecture: x86_64
     platform: kvm
+libraries:
+  lwip:
+    version: '0.5'
+  newlib:
+    version: '0.5'

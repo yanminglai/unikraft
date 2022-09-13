@@ -23,8 +23,10 @@ int receive_and_send(int file_fd, int client_recvfd, int client_sendfd)
 	}
 
     // TODO: write to file before echoing back
+	write(file_fd, buf, sizeof(buf));	
 
     // TODO: apply rot13
+	rot13(buf);
 
 	bytes_send = send(client_sendfd, buf, BUFLEN, 0);
 	if (bytes_send < 0) {
@@ -41,14 +43,30 @@ int main(int argc, char* argv[])
 	struct sockaddr_in serv_addr;
 
 	// TODO: open() the file you want to store the strings in;
-	int file_fd =
+	int file_fd = open("origin_strings.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644);
+
 
 	if (file_fd < 0) {
 		perror("socket");
 		exit(1);
 	}
 
-	lseek(file_fd, 0, SEEK_SET);
+	lseek(file_fd, 0, SEEK_END);
+	/*        
+	   lseek() repositions the file offset of the open file description
+       associated with the file descriptor fd to the argument offset
+       according to the directive whence as follows:
+
+       SEEK_SET
+              The file offset is set to offset bytes.
+
+       SEEK_CUR
+              The file offset is set to its current location plus offset
+              bytes.
+
+       SEEK_END
+              The file offset is set to the size of the file plus offset
+              bytes. */
 
 	listen_fd = socket(AF_INET, SOCK_STREAM, 0);
 	if (listen_fd < 0) {
@@ -94,6 +112,7 @@ int main(int argc, char* argv[])
 	close(listen_fd);
 
     // TODO: close() file_fd
+	close(file_fd);
 
 	return 0;
 }

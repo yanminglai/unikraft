@@ -37,7 +37,7 @@ int receive_and_send(int client_recvfd, int client_sendfd)
         fprintf(stderr, "bytes_received recv");
         return -1;
     }
-
+    
     rot13(buf);
 
     bytes_send = send(client_sendfd, buf, BUFLEN, 0);
