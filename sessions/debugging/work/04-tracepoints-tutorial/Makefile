@@ -1,6 +1,6 @@
-UK_ROOT ?= $(PWD)/../../unikraft
-UK_LIBS ?= $(PWD)/../../libs
-LIBS :=
+UK_ROOT ?= ~/.unikraft
+UK_LIBS ?= $(UK_ROOT)libs
+LIBS := 
 
 all:
 	@$(MAKE) -C $(UK_ROOT) A=$(PWD) L=$(LIBS)
