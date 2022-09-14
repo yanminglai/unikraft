@@ -1,6 +1,6 @@
 UK_ROOT ?= ~/.unikraft
 UK_LIBS ?= $(UK_ROOT)/libs
-LIBS := $(UK_LIBS)/newlib
+LIBS := $(UK_LIBS)/nolibc
 
 all:
 	@$(MAKE) -C $(UK_ROOT) A=$(PWD) L=$(LIBS)

@@ -4,9 +4,11 @@ name: 06-adding-filesystems
 unikraft:
   version: 'staging'
   kconfig:
-    - TODO
-    - TODO
-    - TODO
+    - CONFIG_LIBUK9P=y
+    - CONFIG_LIB9PFS=y
+    - CONFIG_LIBVFSCORE_AUTOMOUNT_ROOTFS=y
+    - CONFIG_LIBVFSCORE_ROOTFS_9PFS=y
+    - CONFIG_LIBVFSCORE_ROOTDEV="fs0"
 targets:
   - architecture: x86_64
     platform: kvm
@@ -15,5 +17,8 @@ libraries:
     version: 'staging'
     kconfig:
       - CONFIG_LIBNEWLIBC=y
+  lwip:
+    version: 'staging'
 volumes:
-  TODO
+  guest_fs:
+    driver: 9pfs

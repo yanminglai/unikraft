@@ -1,0 +1,2 @@
+newlib bin size = 918736 bytes
+nolibc bin size = 394448 bytes

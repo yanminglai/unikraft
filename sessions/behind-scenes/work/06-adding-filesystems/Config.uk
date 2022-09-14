@@ -1,0 +1,11 @@
+config APPHELLOWORLD_READFILE
+    bool "read my file"
+    default n
+    help
+        read the file located in guest_fs/ and print to the console
+
+config APPHELLOWORLD_QSORT
+    bool "qsort"
+    default n
+    help    
+        enable qsort from implemented by stdlib
