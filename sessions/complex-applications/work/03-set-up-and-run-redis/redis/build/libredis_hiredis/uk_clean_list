@@ -1,0 +1,12 @@
+/home/zjlab/.unikraft/apps/redis/build/libredis_hiredis/async.o
+/home/zjlab/.unikraft/apps/redis/build/libredis_hiredis/async.d
+/home/zjlab/.unikraft/apps/redis/build/libredis_hiredis/hiredis.o
+/home/zjlab/.unikraft/apps/redis/build/libredis_hiredis/hiredis.d
+/home/zjlab/.unikraft/apps/redis/build/libredis_hiredis/net.o
+/home/zjlab/.unikraft/apps/redis/build/libredis_hiredis/net.d
+/home/zjlab/.unikraft/apps/redis/build/libredis_hiredis/read.o
+/home/zjlab/.unikraft/apps/redis/build/libredis_hiredis/read.d
+/home/zjlab/.unikraft/apps/redis/build/libredis_hiredis/sds.o
+/home/zjlab/.unikraft/apps/redis/build/libredis_hiredis/sds.d
+/home/zjlab/.unikraft/apps/redis/build/libredis_hiredis.ld.o
+/home/zjlab/.unikraft/apps/redis/build/libredis_hiredis.o

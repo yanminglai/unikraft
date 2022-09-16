@@ -1,0 +1,8 @@
+/home/zjlab/.unikraft/apps/redis/build/libuknetdev/libparam.lds
+/home/zjlab/.unikraft/apps/redis/build/libuknetdev/libparam.lds.d
+/home/zjlab/.unikraft/apps/redis/build/libuknetdev/netbuf.o
+/home/zjlab/.unikraft/apps/redis/build/libuknetdev/netbuf.d
+/home/zjlab/.unikraft/apps/redis/build/libuknetdev/netdev.o
+/home/zjlab/.unikraft/apps/redis/build/libuknetdev/netdev.d
+/home/zjlab/.unikraft/apps/redis/build/libuknetdev.ld.o
+/home/zjlab/.unikraft/apps/redis/build/libuknetdev.o

@@ -1,0 +1,8 @@
+/home/zjlab/.unikraft/apps/redis/build/libposix_socket/driver.o
+/home/zjlab/.unikraft/apps/redis/build/libposix_socket/driver.d
+/home/zjlab/.unikraft/apps/redis/build/libposix_socket/socket_vnops.o
+/home/zjlab/.unikraft/apps/redis/build/libposix_socket/socket_vnops.d
+/home/zjlab/.unikraft/apps/redis/build/libposix_socket/socket.o
+/home/zjlab/.unikraft/apps/redis/build/libposix_socket/socket.d
+/home/zjlab/.unikraft/apps/redis/build/libposix_socket.ld.o
+/home/zjlab/.unikraft/apps/redis/build/libposix_socket.o

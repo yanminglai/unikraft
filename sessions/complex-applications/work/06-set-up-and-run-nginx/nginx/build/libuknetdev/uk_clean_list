@@ -1,0 +1,8 @@
+/home/zjlab/.unikraft/apps/nginx/build/libuknetdev/libparam.lds
+/home/zjlab/.unikraft/apps/nginx/build/libuknetdev/libparam.lds.d
+/home/zjlab/.unikraft/apps/nginx/build/libuknetdev/netbuf.o
+/home/zjlab/.unikraft/apps/nginx/build/libuknetdev/netbuf.d
+/home/zjlab/.unikraft/apps/nginx/build/libuknetdev/netdev.o
+/home/zjlab/.unikraft/apps/nginx/build/libuknetdev/netdev.d
+/home/zjlab/.unikraft/apps/nginx/build/libuknetdev.ld.o
+/home/zjlab/.unikraft/apps/nginx/build/libuknetdev.o

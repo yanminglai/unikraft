@@ -1,0 +1,10 @@
+/home/zjlab/.unikraft/apps/redis/build/libposix_event/poll.o
+/home/zjlab/.unikraft/apps/redis/build/libposix_event/poll.d
+/home/zjlab/.unikraft/apps/redis/build/libposix_event/select.o
+/home/zjlab/.unikraft/apps/redis/build/libposix_event/select.d
+/home/zjlab/.unikraft/apps/redis/build/libposix_event/epoll.o
+/home/zjlab/.unikraft/apps/redis/build/libposix_event/epoll.d
+/home/zjlab/.unikraft/apps/redis/build/libposix_event/eventfd.o
+/home/zjlab/.unikraft/apps/redis/build/libposix_event/eventfd.d
+/home/zjlab/.unikraft/apps/redis/build/libposix_event.ld.o
+/home/zjlab/.unikraft/apps/redis/build/libposix_event.o
