@@ -1,6 +1,5 @@
 #include <stdio.h>
-#include <fortune.h>
-
+#include "/usr/local/include/fortune.h"
 int main(void)
 {
   fortune_t *fortune = rand_fortune();

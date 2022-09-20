@@ -1,0 +1,4 @@
+source "/home/zjlab/.unikraft/unikraft/plat//kvm/Config.uk"
+source "/home/zjlab/.unikraft/unikraft/plat//linuxu/Config.uk"
+source "/home/zjlab/.unikraft/unikraft/plat//xen/Config.uk"
+source "/home/zjlab/.unikraft/unikraft/plat/Config.uk"
