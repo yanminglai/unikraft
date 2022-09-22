@@ -1,16 +1,24 @@
 # TODO_1
-menuconfig LIBNAME
+menuconfig LIBKDTREE
 	bool "kdtree - simplify the use of kd-trees"
 	default n
 	# TODO_7
+	# 在这里添加一个extern lib的dep lib
+	select LIBNEWLIBC
 
 # TODO_1
-# if LIBNAME
-#	config BUILD_TESTS
-#		bool "Build test suite"
-#		default n
-#		
-#	if BUILD_TESTS
-#		# TODO_9
-# 	endif
-# endif
+if LIBKDTREE
+	config BUILD_TESTS
+		bool "Build test suite"
+		default n
+		
+	if BUILD_TESTS
+		# TODO_9
+		config TEST_1
+			bool "TEST 1"
+			default y
+		config TEST_2
+			bool "TEST 2"
+			default y
+	endif
+endif
