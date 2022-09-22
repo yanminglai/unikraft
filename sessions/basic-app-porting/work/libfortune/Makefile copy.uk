@@ -1,0 +1,85 @@
+# SPDX-License-Identifier: BSD-3-Clause
+#
+# libfortune Unikraft library
+#
+# Authors: Yanming Lai <yanminglai96@gmail.com>
+#
+# Copyright (c) 2022, Yanming Lai <yanminglai96@gmail.com>. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+#
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+# 3. Neither the name of the copyright holder nor the names of its
+#    contributors may be used to endorse or promote products derived from
+#    this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+# AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+# LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+# INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+# CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+# ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+# POSSIBILITY OF SUCH DAMAGE.
+
+################################################################################
+# Library registration
+################################################################################
+$(eval $(call addlib_s,libfortune,$(CONFIG_LIBFORTUNE)))
+
+################################################################################
+# Sources
+################################################################################]
+LIBFORTUNE_VERSION = 0.1.0
+# 这里去github查看具体下载链接并进行修改
+# LIBFORTUNE_URL = https://github.com/nderjung/libfortune/archive/refs/tags/v$(LIBFORTUNE_VERSION).zip
+# SUBDIR为下载下来并解压后文件夹的名字，例如libfortune-0.1.0
+LIBFORTUNE_BASE = /home/zjlab/.unikraft/libs/libfortune/libfortune-0.1.0
+LIBFORTUNE_PATCHDIR = $(LIBFORTUNE_BASE)/patches
+# $(eval $(call patch,libfortune,$(LIBFORTUNE_PATCHDIR),fortune-$(LIBFORTUNE_VERSION)))
+# $(eval $(call fetch,libfortune,$(LIBFORTUNE_URL)))
+
+################################################################################
+# Helpers
+################################################################################
+LIBFORTUNE_SRC = $(LIBFORTUNE_BASE)/src
+
+################################################################################
+# Library includes
+################################################################################
+# CINCLUDES-y += -I$(LIBFORTUNE_BASENAME)/include
+
+################################################################################
+# Flags
+################################################################################
+# LIBFORTUNE_FLAGS =
+
+# Suppress some warnings to make the build process look neater
+#LIBFORTUNE_FLAGS_SUPPRESS =
+
+#LIBFORTUNE_CFLAGS-y += $(LIBFORTUNE_FLAGS)
+#LIBFORTUNE_CFLAGS-y += $(LIBFORTUNE_FLAGS_SUPPRESS)
+
+################################################################################
+# Glue code
+################################################################################
+# Include paths
+# LIBFORTUNE_CINCLUDES-y   += $(LIBFORTUNE_COMMON_INCLUDES-y)
+# LIBFORTUNE_CXXINCLUDES-y += $(LIBFORTUNE_COMMON_INCLUDES-y)
+# LIBFORTUNESRCS-$(CONFIG_LIBFORTUNE_MAIN_FUNCTION) += $(LIBFORTUNE_BASE)/main.c|unikraft
+
+LIBNGINX_CINCLUDES-$(CONFIG_LIBFORTUNE) += -I$(LIBFORTUNE_BASE)/include
+
+################################################################################
+# Library sources
+################################################################################
+LIBFORTUNE_SRCS-y += $(LIBFORTUNE_SRC)/libfortune.c
